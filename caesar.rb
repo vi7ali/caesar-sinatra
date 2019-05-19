@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 get '/' do
-  message = "Ok, let's see"
+  message = caesar_cipher("Hello World!", 5)
   erb :index, :locals => {message: message}
 end
 

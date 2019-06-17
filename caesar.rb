@@ -1,21 +1,16 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require './lib/cipher.rb'
 
 get '/' do
-  message = caesar_cipher("Hello World!", 5)
-  erb :index, :locals => {message: message}
+  erb :index
 end
 
-def caesar_cipher(sentence, offset)
-  result = ""
-  sentence.each_codepoint do |c|
-    if c>=65 && c<=90
-      result += (65+((c - 65 + offset)%26)).chr
-    elsif c>=97 && c<=122
-      result += (97+((c - 97 + offset)%26)).chr    
-    else
-      result = result + c.chr
-    end
-  end
-  result
+get '/output' do
+  str = params['str']
+  offset = params['offset'].to_i
+  encoded_string = Cipher.new(str: str, offset: offset).encrypt
+  erb :output, locals: { enc_str: encoded_string }
 end

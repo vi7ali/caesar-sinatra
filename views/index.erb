@@ -1,7 +1,25 @@
 <!DOCTYPE html>
-<html>
-  <head></head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Caesar Cipher</title>
+  </head>
   <body>
-    <section><%= message %></section>
+    <header>
+      <h1>Encrypt with Caesar Cipher</h1>
+    </header>
+    <section class="main">
+      <h2>Type the text and the offset below</h2>
+      <form action="/output" method="get">
+        <label for="str" class="inp">Text to encode</label>
+        <input type="text" name="str" class="inp">
+        <label for="offset" class="inp">Offset</label>
+        <input type="number" name="offset" class="inp">
+        <input type="submit" id="btn" value="Encode!">
+      </form>
+    </section>
   </body>
 </html>

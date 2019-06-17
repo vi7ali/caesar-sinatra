@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+header, h1, h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;  
+}
+
+body {
+  background-color: rgb(6, 16, 33);
+  color: rgb(183,109,104);
+}
+
+.main {
+  display: block;
+  margin: auto;
+  width: 25%;
+  min-width: 600px;
+  border: 1px solid rgb(184, 193, 209);
+  border-radius: 50px;
+}
+
+#result {
+  display: block;  
+  margin: 0.5rem auto;
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(208,159,156);
+}
+
+.inp {
+  display: block;  
+  margin: 0.5rem auto;
+  width: 50%;
+  text-align: center;
+}
+
+#btn {
+  display: block;
+  margin: 1em auto;
+  width: 150px;
+  height: 50px;
+}
